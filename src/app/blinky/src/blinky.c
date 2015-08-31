@@ -33,6 +33,8 @@
 static os_event_t  taskArray[1]; /*> the task array*/
 static volatile os_timer_t blinkTimer;
 
+static const int dummyTaskPrio = 0;
+
 /************************************
  * forward declaration of functions
  ************************************/
@@ -65,7 +67,7 @@ void ICACHE_FLASH_ATTR user_init() {
 
     /* start of dummy system task */
     system_os_task(                           dummyTask, /* the function pointer to the task */
-                                                      0, /* the task priority */
+                                          dummyTaskPrio, /* the task priority */
                                               taskArray, /* the array with the tasks */
                     sizeof(taskArray)/sizeof(os_event_t) );
 }
@@ -85,5 +87,7 @@ void doBlink(void* __attribute__((unused)) arg /* context */  )
  * @param events - some os events
  */
 static void ICACHE_FLASH_ATTR dummyTask(os_event_t* __attribute__((unused)) events) {
-    os_delay_us(10);
+    /* do something */
+    os_delay_us(100);
+    system_os_post(dummyTaskPrio, 0, 0 ); /* re schedule the task*/
 }
