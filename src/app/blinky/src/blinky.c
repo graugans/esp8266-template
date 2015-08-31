@@ -50,7 +50,7 @@ void ICACHE_FLASH_ATTR user_init() {
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
 
     /* set PIN2 to high */
-    GPIO_OUTPUT_SET(2,1);
+    GPIO_OUTPUT_SET(GPIO_ID_PIN(2),1);
 
     /* clear any running timer */
     os_timer_disarm(&blinkTimer /* timer instance */);
@@ -76,8 +76,8 @@ void ICACHE_FLASH_ATTR user_init() {
  */
 void doBlink(void* __attribute__((unused)) arg /* context */  )
 {
-    uint32_t nextState = GPIO_INPUT_GET(2);
-    GPIO_OUTPUT_SET(2, 0x00000001 ^ nextState); /* toggle the bit */
+    uint32_t nextState = GPIO_INPUT_GET(GPIO_ID_PIN(2));
+    GPIO_OUTPUT_SET(GPIO_ID_PIN(2), 0x00000001 ^ nextState); /* toggle the bit */
 }
 
 /** @brief a dummy task
