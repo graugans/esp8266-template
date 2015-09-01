@@ -30,10 +30,7 @@
  * static variables
  ******************************************/
 
-static os_event_t  taskArray[1]; /*> the task array*/
 static volatile os_timer_t blinkTimer;
-
-static const int dummyTaskPrio = 0;
 
 /************************************
  * forward declaration of functions
@@ -65,11 +62,6 @@ void ICACHE_FLASH_ATTR user_init() {
                           500, /* period in ms */
                             1  /* 0 == singleshot, 1 == continuous*/  );
 
-    /* start of dummy system task */
-    system_os_task(                           dummyTask, /* the function pointer to the task */
-                                          dummyTaskPrio, /* the task priority */
-                                              taskArray, /* the array with the tasks */
-                    sizeof(taskArray)/sizeof(os_event_t) );
 }
 
 /** @brief do the blink stuff
@@ -80,14 +72,4 @@ void doBlink(void* __attribute__((unused)) arg /* context */  )
 {
     uint32_t nextState = GPIO_INPUT_GET(GPIO_ID_PIN(2));
     GPIO_OUTPUT_SET(GPIO_ID_PIN(2), 0x00000001 ^ nextState); /* toggle the bit */
-}
-
-/** @brief a dummy task
- *
- * @param events - some os events
- */
-static void ICACHE_FLASH_ATTR dummyTask(os_event_t* __attribute__((unused)) events) {
-    /* do something */
-    os_delay_us(100);
-    system_os_post(dummyTaskPrio, 0, 0 ); /* re schedule the task*/
 }
