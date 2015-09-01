@@ -54,8 +54,6 @@ static volatile os_timer_t blinkTimer;
  * forward declaration of functions
  ************************************/
 void doBlink(void *arg);
-static void dummyTask(os_event_t *events);
-
 
 /* @brief main entry point called by the SDK */
 void ICACHE_FLASH_ATTR user_init() {
