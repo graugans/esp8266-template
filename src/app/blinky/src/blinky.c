@@ -85,8 +85,16 @@ void ICACHE_FLASH_ATTR user_init() {
     os_timer_arm( &blinkTimer, /* timer instance */
                           1000, /* period in ms */
                             1  /* 0 == singleshot, 1 == continuous*/  );
+    ets_printf("\n\r");
+    ets_printf("\n\r");
+    ets_printf("---------------------------------------------------\n\r");
     ets_printf("Starting blinky demo application \n\r");
-    system_set_os_print(0);
+    ets_printf("Espressif SDK version  : %s \n\r",system_get_sdk_version());
+    ets_printf("Espressif BOOT version : 0x03%x \n\r", (int) system_get_boot_version());
+    ets_printf("Mem information        :  \n\r");
+    ets_printf("---------------------------------------------------\n\r");
+    system_print_meminfo(); /* dump some memory information */
+    system_set_os_print(0); /* disabling those chatty system messages */
 
 }
 
