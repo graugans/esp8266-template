@@ -91,9 +91,10 @@ void ICACHE_FLASH_ATTR user_init() {
     ets_printf("Starting blinky demo application \n\r");
     ets_printf("Espressif SDK version  : %s \n\r",system_get_sdk_version());
     ets_printf("Espressif BOOT version : 0x03%x \n\r", (int) system_get_boot_version());
+    ets_printf("CPU Speed              : %d MHz\n\r", system_get_cpu_freq());
     ets_printf("Mem information        :  \n\r");
-    ets_printf("---------------------------------------------------\n\r");
     system_print_meminfo(); /* dump some memory information */
+    ets_printf("---------------------------------------------------\n\r");
     system_set_os_print(0); /* disabling those chatty system messages */
 
 }
