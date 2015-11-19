@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/value=${ProjDirPath}/platform/environment-xtensa-lx106.Linux
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/appendContributed=true
