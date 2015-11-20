@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/ESPSDKPATH/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/ESPSDKPATH/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/ESPSDKPATH/value=/opt/Espressif/esp-open-sdk
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/delimiter=\:
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/operation=append
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1055749283/TOOLCHAIN_ENV/value=${ProjDirPath}/platform/environment-xtensa-lx106.Linux

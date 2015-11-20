@@ -22,9 +22,17 @@
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.2006973768" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder command="rake" id="cdt.managedbuild.builder.gnu.cross.679798769" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.622659580" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option id="gnu.c.compiler.option.include.paths.99848066" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/sdk/include/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/usr/include&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.90496833" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.850573488" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.include.paths.25142607" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/sdk/include/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/usr/include&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1772312077" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.570617163" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
@@ -36,6 +44,10 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.609881938" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1034954478" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.2090550288" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/sdk/include/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ESPSDKPATH}/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/usr/include&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1537198978" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
@@ -48,9 +60,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="esp8266-template.null.1720088460" name="esp8266-template"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
@@ -61,7 +70,6 @@
 		<buildTargets>
 			<target name="List all Targets" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>rake</buildCommand>
-				<buildArguments/>
 				<buildTarget>-T</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -69,7 +77,6 @@
 			</target>
 			<target name="Clobber" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>rake</buildCommand>
-				<buildArguments/>
 				<buildTarget>clobber</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -77,12 +84,29 @@
 			</target>
 			<target name="all" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>rake</buildCommand>
-				<buildArguments/>
 				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="app:ap" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>rake</buildCommand>
+				<buildArguments/>
+				<buildTarget>app:ap</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
 			</target>
 		</buildTargets>
 	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1055749283;cdt.managedbuild.toolchain.gnu.cross.base.1055749283.384352645;cdt.managedbuild.tool.gnu.cross.c.compiler.622659580;cdt.managedbuild.tool.gnu.c.compiler.input.90496833">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1055749283;cdt.managedbuild.toolchain.gnu.cross.base.1055749283.384352645;cdt.managedbuild.tool.gnu.cross.cpp.compiler.850573488;cdt.managedbuild.tool.gnu.cpp.compiler.input.1772312077">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
